@@ -1,0 +1,1043 @@
+object Form1: TForm1
+  Left = 444
+  Height = 506
+  Top = 78
+  Width = 806
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'TCP Modbus Scaner V1.0 29/06/2025 18:27:10'
+  ClientHeight = 506
+  ClientWidth = 806
+  Position = poWorkAreaCenter
+  LCLVersion = '4.0.0.4'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  object Button1: TButton
+    Left = 8
+    Height = 21
+    Top = 8
+    Width = 63
+    Caption = 'Active'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 80
+    Height = 22
+    Top = 8
+    Width = 63
+    Caption = 'Deactive'
+    TabOrder = 1
+    OnClick = Button2Click
+  end
+  object Memo1: TMemo
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 576
+    Height = 488
+    Top = 18
+    Width = 230
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ScrollBars = ssAutoBoth
+    TabOrder = 2
+    WordWrap = False
+  end
+  object Label5: TLabel
+    Left = 408
+    Height = 15
+    Top = 18
+    Width = 90
+    Caption = 'Custom Address:'
+  end
+  object Edit1: TEdit
+    Left = 504
+    Height = 18
+    Top = 18
+    Width = 57
+    AutoSize = False
+    TabOrder = 3
+    Text = '0'
+    OnEditingDone = Edit1EditingDone
+  end
+  object HMILabel5: THMILabel
+    Left = 448
+    Height = 16
+    Top = 312
+    Width = 64
+    Enabled = True
+    NumberFormat = '#0.0'
+    PLCTag = CustomAddress
+    FormatDateTimeOptions = []
+  end
+  object HMIEdit5: THMIEdit
+    Left = 448
+    Height = 23
+    Top = 336
+    Width = 64
+    Color = clWindow
+    Enabled = True
+    Font.Color = clWindowText
+    ParentFont = False
+    TabOrder = 4
+    NumberFormat = '#0.0'
+    PLCTag = CustomAddress
+    EnableMinValue = False
+    EnableMaxValue = False
+  end
+  object Label6: TLabel
+    Left = 408
+    Height = 15
+    Top = 312
+    Width = 29
+    Caption = 'Read:'
+  end
+  object Label7: TLabel
+    Left = 408
+    Height = 15
+    Top = 342
+    Width = 31
+    Caption = 'Write:'
+  end
+  object Edit5: TEdit
+    Left = 168
+    Height = 23
+    Top = 40
+    Width = 80
+    TabOrder = 5
+    Text = '502'
+    OnEditingDone = Edit5EditingDone
+  end
+  object Label14: TLabel
+    Left = 136
+    Height = 15
+    Top = 40
+    Width = 22
+    Caption = 'Port'
+  end
+  object Edit6: TEdit
+    Left = 32
+    Height = 23
+    Top = 40
+    Width = 96
+    TabOrder = 6
+    Text = '127.0.0.1'
+    OnEditingDone = Edit6EditingDone
+  end
+  object Label15: TLabel
+    Left = 8
+    Height = 15
+    Top = 40
+    Width = 13
+    Caption = 'IP:'
+  end
+  object PageControl1: TPageControl
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 8
+    Height = 426
+    Top = 80
+    Width = 400
+    ActivePage = TabSheet4
+    Anchors = [akTop, akLeft, akBottom]
+    TabIndex = 3
+    TabOrder = 7
+    object TabSheet1: TTabSheet
+      Caption = 'Coil'
+      ClientHeight = 398
+      ClientWidth = 392
+      object GroupBox2: TGroupBox
+        AnchorSideBottom.Control = TabSheet1
+        AnchorSideBottom.Side = asrBottom
+        Left = 0
+        Height = 398
+        Top = 0
+        Width = 384
+        Anchors = [akTop, akLeft, akBottom]
+        Caption = 'Auto Scan Coil'
+        ClientHeight = 378
+        ClientWidth = 380
+        TabOrder = 0
+        object Edit7: TEdit
+          Left = 48
+          Height = 23
+          Top = 8
+          Width = 80
+          TabOrder = 0
+          Text = '0'
+        end
+        object Label16: TLabel
+          Left = 8
+          Height = 15
+          Top = 8
+          Width = 28
+          Caption = 'Form'
+        end
+        object Label17: TLabel
+          Left = 160
+          Height = 15
+          Top = 8
+          Width = 12
+          Caption = 'To'
+        end
+        object Edit8: TEdit
+          Left = 184
+          Height = 23
+          Top = 8
+          Width = 80
+          TabOrder = 1
+          Text = '5000'
+        end
+        object Label18: TLabel
+          Left = 120
+          Height = 15
+          Top = 40
+          Width = 29
+          Caption = 'Read:'
+        end
+        object Button4: TButton
+          Left = 296
+          Height = 26
+          Top = 5
+          Width = 77
+          Caption = 'Start'
+          TabOrder = 2
+          OnClick = Button4Click
+        end
+        object Label19: TLabel
+          Left = 8
+          Height = 15
+          Top = 40
+          Width = 54
+          Caption = 'Address: 0'
+        end
+        object Memo3: TMemo
+          AnchorSideLeft.Control = GroupBox2
+          AnchorSideRight.Control = GroupBox2
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = GroupBox2
+          AnchorSideBottom.Side = asrBottom
+          Left = 0
+          Height = 234
+          Top = 144
+          Width = 380
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          ScrollBars = ssAutoBoth
+          TabOrder = 3
+          WordWrap = False
+        end
+        object Edit9: TEdit
+          Left = 272
+          Height = 23
+          Top = 33
+          Width = 80
+          TabOrder = 4
+          Text = '500'
+          OnEditingDone = Edit9EditingDone
+        end
+        object Label20: TLabel
+          Left = 224
+          Height = 15
+          Top = 40
+          Width = 39
+          Caption = 'Interval'
+        end
+        object HMILabel7: THMILabel
+          Left = 158
+          Height = 15
+          Top = 40
+          Width = 51
+          Enabled = True
+          NumberFormat = '#0'
+          PLCTag = AutoScanCoil
+          FormatDateTimeOptions = []
+        end
+        object CheckBox10: TCheckBox
+          Left = 8
+          Height = 19
+          Top = 64
+          Width = 69
+          Caption = 'SwapByte'
+          TabOrder = 5
+          OnEditingDone = CheckBox10EditingDone
+        end
+        object CheckBox11: TCheckBox
+          Left = 8
+          Height = 19
+          Top = 88
+          Width = 75
+          Caption = 'SwapWord'
+          TabOrder = 6
+          OnEditingDone = CheckBox11EditingDone
+        end
+        object CheckBox12: TCheckBox
+          Left = 8
+          Height = 19
+          Top = 112
+          Width = 83
+          Caption = 'SwapDWord'
+          TabOrder = 7
+          OnEditingDone = CheckBox12EditingDone
+        end
+        object Label34: TLabel
+          Left = 104
+          Height = 15
+          Top = 64
+          Width = 45
+          Caption = 'TagType:'
+        end
+        object ComboBox9: TComboBox
+          Left = 160
+          Height = 23
+          Top = 64
+          Width = 104
+          ItemHeight = 15
+          ReadOnly = True
+          TabOrder = 8
+          OnEditingDone = ComboBox9EditingDone
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Input'
+      ClientHeight = 398
+      ClientWidth = 392
+      object GroupBox3: TGroupBox
+        AnchorSideBottom.Control = TabSheet2
+        AnchorSideBottom.Side = asrBottom
+        Left = 0
+        Height = 398
+        Top = 0
+        Width = 384
+        Anchors = [akTop, akLeft, akBottom]
+        Caption = 'Auto Scan Input'
+        ClientHeight = 378
+        ClientWidth = 380
+        TabOrder = 0
+        object Edit10: TEdit
+          Left = 48
+          Height = 23
+          Top = 8
+          Width = 80
+          TabOrder = 0
+          Text = '0'
+        end
+        object Label21: TLabel
+          Left = 8
+          Height = 15
+          Top = 8
+          Width = 28
+          Caption = 'Form'
+        end
+        object Label22: TLabel
+          Left = 160
+          Height = 15
+          Top = 8
+          Width = 12
+          Caption = 'To'
+        end
+        object Edit11: TEdit
+          Left = 184
+          Height = 23
+          Top = 8
+          Width = 80
+          TabOrder = 1
+          Text = '5000'
+        end
+        object Label23: TLabel
+          Left = 120
+          Height = 15
+          Top = 40
+          Width = 29
+          Caption = 'Read:'
+        end
+        object Button5: TButton
+          Left = 296
+          Height = 26
+          Top = 5
+          Width = 77
+          Caption = 'Start'
+          TabOrder = 2
+          OnClick = Button5Click
+        end
+        object Label24: TLabel
+          Left = 8
+          Height = 15
+          Top = 40
+          Width = 54
+          Caption = 'Address: 0'
+        end
+        object Memo4: TMemo
+          AnchorSideLeft.Control = GroupBox3
+          AnchorSideRight.Control = GroupBox3
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = GroupBox3
+          AnchorSideBottom.Side = asrBottom
+          Left = 0
+          Height = 234
+          Top = 144
+          Width = 380
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          ScrollBars = ssAutoBoth
+          TabOrder = 3
+          WordWrap = False
+        end
+        object Edit12: TEdit
+          Left = 272
+          Height = 23
+          Top = 33
+          Width = 80
+          TabOrder = 4
+          Text = '500'
+          OnEditingDone = Edit12EditingDone
+        end
+        object Label25: TLabel
+          Left = 224
+          Height = 15
+          Top = 40
+          Width = 39
+          Caption = 'Interval'
+        end
+        object HMILabel8: THMILabel
+          Left = 158
+          Height = 16
+          Top = 40
+          Width = 57
+          Enabled = True
+          Font.Height = 16
+          ParentFont = False
+          NumberFormat = '#0'
+          PLCTag = AutoScanInput
+          FormatDateTimeOptions = []
+        end
+        object CheckBox7: TCheckBox
+          Left = 8
+          Height = 19
+          Top = 64
+          Width = 69
+          Caption = 'SwapByte'
+          TabOrder = 5
+          OnEditingDone = CheckBox7EditingDone
+        end
+        object CheckBox8: TCheckBox
+          Left = 8
+          Height = 19
+          Top = 88
+          Width = 75
+          Caption = 'SwapWord'
+          TabOrder = 6
+          OnEditingDone = CheckBox8EditingDone
+        end
+        object CheckBox9: TCheckBox
+          Left = 8
+          Height = 19
+          Top = 112
+          Width = 83
+          Caption = 'SwapDWord'
+          TabOrder = 7
+          OnEditingDone = CheckBox9EditingDone
+        end
+        object Label33: TLabel
+          Left = 104
+          Height = 15
+          Top = 64
+          Width = 45
+          Caption = 'TagType:'
+        end
+        object ComboBox8: TComboBox
+          Left = 160
+          Height = 23
+          Top = 64
+          Width = 104
+          ItemHeight = 15
+          ReadOnly = True
+          TabOrder = 8
+          OnEditingDone = ComboBox8EditingDone
+        end
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Hold..'
+      ClientHeight = 398
+      ClientWidth = 392
+      object GroupBox1: TGroupBox
+        AnchorSideBottom.Control = TabSheet3
+        AnchorSideBottom.Side = asrBottom
+        Left = 0
+        Height = 398
+        Top = 0
+        Width = 384
+        Anchors = [akTop, akLeft, akBottom]
+        Caption = 'Auto Scan Holding Register'
+        ClientHeight = 378
+        ClientWidth = 380
+        TabOrder = 0
+        object Edit2: TEdit
+          Left = 48
+          Height = 23
+          Top = 8
+          Width = 80
+          TabOrder = 0
+          Text = '0'
+        end
+        object Label9: TLabel
+          Left = 8
+          Height = 15
+          Top = 8
+          Width = 28
+          Caption = 'Form'
+        end
+        object Label10: TLabel
+          Left = 160
+          Height = 15
+          Top = 8
+          Width = 12
+          Caption = 'To'
+        end
+        object Edit3: TEdit
+          Left = 184
+          Height = 23
+          Top = 8
+          Width = 80
+          TabOrder = 1
+          Text = '5000'
+        end
+        object Label11: TLabel
+          Left = 120
+          Height = 15
+          Top = 40
+          Width = 29
+          Caption = 'Read:'
+        end
+        object Button3: TButton
+          Left = 296
+          Height = 26
+          Top = 5
+          Width = 77
+          Caption = 'Start'
+          TabOrder = 2
+          OnClick = Button3Click
+        end
+        object Label12: TLabel
+          Left = 8
+          Height = 15
+          Top = 40
+          Width = 54
+          Caption = 'Address: 0'
+        end
+        object Memo2: TMemo
+          AnchorSideLeft.Control = GroupBox1
+          AnchorSideRight.Control = GroupBox1
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = GroupBox1
+          AnchorSideBottom.Side = asrBottom
+          Left = 0
+          Height = 234
+          Top = 144
+          Width = 380
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          ScrollBars = ssAutoBoth
+          TabOrder = 3
+          WordWrap = False
+        end
+        object Edit4: TEdit
+          Left = 272
+          Height = 23
+          Top = 33
+          Width = 80
+          TabOrder = 4
+          Text = '500'
+          OnEditingDone = Edit4EditingDone
+        end
+        object Label13: TLabel
+          Left = 224
+          Height = 15
+          Top = 40
+          Width = 39
+          Caption = 'Interval'
+        end
+        object HMILabel6: THMILabel
+          Left = 158
+          Height = 17
+          Top = 40
+          Width = 50
+          Enabled = True
+          NumberFormat = '#0'
+          PLCTag = AutoScanHoldingRegister
+          FormatDateTimeOptions = []
+        end
+        object CheckBox4: TCheckBox
+          Left = 8
+          Height = 19
+          Top = 64
+          Width = 69
+          Caption = 'SwapByte'
+          TabOrder = 5
+          OnEditingDone = CheckBox4EditingDone
+        end
+        object CheckBox5: TCheckBox
+          Left = 8
+          Height = 19
+          Top = 88
+          Width = 75
+          Caption = 'SwapWord'
+          TabOrder = 6
+          OnEditingDone = CheckBox5EditingDone
+        end
+        object CheckBox6: TCheckBox
+          Left = 8
+          Height = 19
+          Top = 112
+          Width = 83
+          Caption = 'SwapDWord'
+          TabOrder = 7
+          OnEditingDone = CheckBox6EditingDone
+        end
+        object Label32: TLabel
+          Left = 104
+          Height = 15
+          Top = 64
+          Width = 45
+          Caption = 'TagType:'
+        end
+        object ComboBox7: TComboBox
+          Left = 160
+          Height = 23
+          Top = 64
+          Width = 104
+          ItemHeight = 15
+          ReadOnly = True
+          TabOrder = 8
+          OnEditingDone = ComboBox7EditingDone
+        end
+      end
+    end
+    object TabSheet4: TTabSheet
+      Caption = 'Inp..'
+      ClientHeight = 398
+      ClientWidth = 392
+      object GroupBox4: TGroupBox
+        AnchorSideBottom.Control = TabSheet3
+        AnchorSideBottom.Side = asrBottom
+        Left = 0
+        Height = 398
+        Top = 0
+        Width = 384
+        Anchors = [akTop, akLeft, akBottom]
+        Caption = 'Auto Scan Input Register'
+        ClientHeight = 378
+        ClientWidth = 380
+        TabOrder = 0
+        object Edit13: TEdit
+          Left = 48
+          Height = 23
+          Top = 8
+          Width = 80
+          TabOrder = 0
+          Text = '0'
+        end
+        object Label26: TLabel
+          Left = 8
+          Height = 15
+          Top = 8
+          Width = 28
+          Caption = 'Form'
+        end
+        object Label27: TLabel
+          Left = 160
+          Height = 15
+          Top = 8
+          Width = 12
+          Caption = 'To'
+        end
+        object Edit14: TEdit
+          Left = 184
+          Height = 23
+          Top = 8
+          Width = 80
+          TabOrder = 1
+          Text = '5000'
+        end
+        object Label28: TLabel
+          Left = 120
+          Height = 15
+          Top = 40
+          Width = 29
+          Caption = 'Read:'
+        end
+        object Button6: TButton
+          Left = 296
+          Height = 26
+          Top = 5
+          Width = 77
+          Caption = 'Start'
+          TabOrder = 2
+          OnClick = Button6Click
+        end
+        object Label29: TLabel
+          Left = 8
+          Height = 15
+          Top = 40
+          Width = 54
+          Caption = 'Address: 0'
+        end
+        object Memo5: TMemo
+          AnchorSideLeft.Control = GroupBox4
+          AnchorSideRight.Control = GroupBox4
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = GroupBox4
+          AnchorSideBottom.Side = asrBottom
+          Left = 0
+          Height = 234
+          Top = 144
+          Width = 380
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          ScrollBars = ssAutoBoth
+          TabOrder = 3
+          WordWrap = False
+        end
+        object Edit15: TEdit
+          Left = 272
+          Height = 23
+          Top = 33
+          Width = 80
+          TabOrder = 4
+          Text = '500'
+          OnEditingDone = Edit15EditingDone
+        end
+        object Label30: TLabel
+          Left = 224
+          Height = 15
+          Top = 40
+          Width = 39
+          Caption = 'Interval'
+        end
+        object HMILabel9: THMILabel
+          Left = 158
+          Height = 17
+          Top = 40
+          Width = 50
+          Enabled = True
+          NumberFormat = '#0'
+          PLCTag = AutoScanInputRegister
+          FormatDateTimeOptions = []
+        end
+        object CheckBox1: TCheckBox
+          Left = 8
+          Height = 19
+          Top = 64
+          Width = 69
+          Caption = 'SwapByte'
+          TabOrder = 5
+          OnEditingDone = CheckBox1EditingDone
+        end
+        object CheckBox2: TCheckBox
+          Left = 8
+          Height = 19
+          Top = 88
+          Width = 75
+          Caption = 'SwapWord'
+          TabOrder = 6
+          OnEditingDone = CheckBox2EditingDone
+        end
+        object CheckBox3: TCheckBox
+          Left = 8
+          Height = 19
+          Top = 112
+          Width = 83
+          Caption = 'SwapDWord'
+          TabOrder = 7
+          OnEditingDone = CheckBox3EditingDone
+        end
+        object Label31: TLabel
+          Left = 104
+          Height = 15
+          Top = 64
+          Width = 45
+          Caption = 'TagType:'
+        end
+        object ComboBox6: TComboBox
+          Left = 160
+          Height = 23
+          Top = 64
+          Width = 104
+          ItemHeight = 15
+          ReadOnly = True
+          TabOrder = 8
+          OnEditingDone = ComboBox6EditingDone
+        end
+      end
+    end
+  end
+  object RadioButton1: TRadioButton
+    Left = 408
+    Height = 19
+    Top = 104
+    Width = 39
+    Caption = 'Coil'
+    TabOrder = 9
+    OnChange = RadioButton1Change
+  end
+  object RadioButton2: TRadioButton
+    Left = 408
+    Height = 19
+    Top = 126
+    Width = 46
+    Caption = 'Input'
+    TabOrder = 10
+    OnChange = RadioButton2Change
+  end
+  object RadioButton3: TRadioButton
+    Left = 408
+    Height = 19
+    Top = 146
+    Width = 103
+    Caption = 'HoldingRegister'
+    Checked = True
+    TabOrder = 8
+    TabStop = True
+    OnChange = RadioButton3Change
+  end
+  object RadioButton4: TRadioButton
+    Left = 408
+    Height = 19
+    Top = 170
+    Width = 88
+    Caption = 'InputRegister'
+    TabOrder = 11
+    OnChange = RadioButton4Change
+  end
+  object Edit16: TEdit
+    Left = 504
+    Height = 18
+    Top = 37
+    Width = 57
+    AutoSize = False
+    TabOrder = 12
+    Text = '0'
+    OnEditingDone = Edit16EditingDone
+  end
+  object Label8: TLabel
+    Left = 408
+    Height = 15
+    Top = 37
+    Width = 66
+    Caption = 'SubElement:'
+  end
+  object CheckBox13: TCheckBox
+    Left = 408
+    Height = 19
+    Top = 192
+    Width = 69
+    Caption = 'SwapByte'
+    TabOrder = 13
+    OnEditingDone = CheckBox13EditingDone
+  end
+  object CheckBox14: TCheckBox
+    Left = 408
+    Height = 19
+    Top = 216
+    Width = 75
+    Caption = 'SwapWord'
+    TabOrder = 14
+    OnEditingDone = CheckBox14EditingDone
+  end
+  object CheckBox15: TCheckBox
+    Left = 408
+    Height = 19
+    Top = 240
+    Width = 83
+    Caption = 'SwapDWord'
+    TabOrder = 15
+    OnEditingDone = CheckBox15EditingDone
+  end
+  object Label35: TLabel
+    Left = 408
+    Height = 15
+    Top = 272
+    Width = 45
+    Caption = 'TagType:'
+  end
+  object ComboBox10: TComboBox
+    Left = 464
+    Height = 23
+    Top = 272
+    Width = 104
+    ItemHeight = 15
+    ReadOnly = True
+    TabOrder = 16
+    OnEditingDone = ComboBox10EditingDone
+  end
+  object Label36: TLabel
+    Left = 408
+    Height = 15
+    Top = 64
+    Width = 76
+    Caption = 'ReadFunction:'
+  end
+  object Edit17: TEdit
+    Left = 504
+    Height = 23
+    Top = 56
+    Width = 56
+    TabOrder = 17
+    Text = '3'
+    OnEditingDone = Edit17EditingDone
+  end
+  object Label37: TLabel
+    Left = 408
+    Height = 15
+    Top = 88
+    Width = 78
+    Caption = 'WriteFunction:'
+  end
+  object Edit18: TEdit
+    Left = 504
+    Height = 23
+    Top = 80
+    Width = 56
+    TabOrder = 18
+    Text = '16'
+    OnEditingDone = Edit18EditingDone
+  end
+  object TCP_UDPPort1: TTCP_UDPPort
+    Host = '127.0.0.1'
+    Port = 502
+    ExclusiveDevice = False
+    OnCommPortOpened = TCP_UDPPort1CommPortOpened
+    OnCommPortOpenError = TCP_UDPPort1CommPortOpenError
+    OnCommPortClosed = TCP_UDPPort1CommPortClosed
+    OnCommPortCloseError = TCP_UDPPort1CommPortCloseError
+    OnCommErrorReading = TCP_UDPPort1CommErrorReading
+    OnCommErrorWriting = TCP_UDPPort1CommErrorWriting
+    OnCommPortDisconnected = TCP_UDPPort1CommPortDisconnected
+    Left = 168
+  end
+  object ModBusTCPDriver1: TModBusTCPDriver
+    CommunicationPort = TCP_UDPPort1
+    ReadOnly = False
+    Left = 232
+  end
+  object CustomAddress: TPLCTagNumber
+    TagGUID = '{B2859B66-EB0C-4BCE-96A2-CC2948073CA9}'
+    PLCRack = 0
+    PLCSlot = 0
+    PLCStation = 1
+    MemFile_DB = 0
+    MemAddress = 0
+    MemSubElement = 0
+    MemReadFunction = 3
+    MemWriteFunction = 16
+    ProtocolDriver = ModBusTCPDriver1
+    UpdateTime = 500
+    LongAddress = ''
+    EnableMaxValue = False
+    EnableMinValue = False
+    Left = 640
+    Top = 104
+  end
+  object Timer3: TTimer
+    Enabled = False
+    Interval = 500
+    OnTimer = Timer3Timer
+    Left = 312
+    Top = 64
+  end
+  object AutoScanHoldingRegister: TPLCTagNumber
+    TagGUID = '{C0C90CAD-802F-45A2-A7CE-27610DF0E343}'
+    PLCRack = 0
+    PLCSlot = 0
+    PLCStation = 1
+    MemFile_DB = 0
+    MemAddress = 0
+    MemSubElement = 0
+    MemReadFunction = 3
+    MemWriteFunction = 16
+    ProtocolDriver = ModBusTCPDriver1
+    UpdateTime = 500
+    LongAddress = ''
+    EnableMaxValue = False
+    EnableMinValue = False
+    OnUpdate = AutoScanHoldingRegisterUpdate
+    Left = 640
+    Top = 288
+  end
+  object AutoScanInput: TPLCTagNumber
+    TagGUID = '{A8C07282-CFF4-4C26-8BE0-F5879B610C26}'
+    PLCRack = 0
+    PLCSlot = 0
+    PLCStation = 1
+    MemFile_DB = 0
+    MemAddress = 0
+    MemSubElement = 0
+    MemReadFunction = 2
+    MemWriteFunction = 0
+    ProtocolDriver = ModBusTCPDriver1
+    UpdateTime = 500
+    LongAddress = ''
+    EnableMaxValue = False
+    EnableMinValue = False
+    OnUpdate = AutoScanInputUpdate
+    Left = 640
+    Top = 224
+  end
+  object AutoScanCoil: TPLCTagNumber
+    TagGUID = '{927A629B-5F9B-417B-8160-13821C027AB5}'
+    PLCRack = 0
+    PLCSlot = 0
+    PLCStation = 1
+    MemFile_DB = 0
+    MemAddress = 0
+    MemSubElement = 0
+    MemReadFunction = 1
+    MemWriteFunction = 15
+    ProtocolDriver = ModBusTCPDriver1
+    UpdateTime = 500
+    LongAddress = ''
+    EnableMaxValue = False
+    EnableMinValue = False
+    OnUpdate = AutoScanCoilUpdate
+    Left = 640
+    Top = 168
+  end
+  object AutoScanInputRegister: TPLCTagNumber
+    TagGUID = '{C055C28B-887D-4398-8AA5-9385D1CBF10C}'
+    PLCRack = 0
+    PLCSlot = 0
+    PLCStation = 1
+    MemFile_DB = 0
+    MemAddress = 0
+    MemSubElement = 0
+    MemReadFunction = 4
+    MemWriteFunction = 0
+    ProtocolDriver = ModBusTCPDriver1
+    UpdateTime = 500
+    LongAddress = ''
+    EnableMaxValue = False
+    EnableMinValue = False
+    OnUpdate = AutoScanInputRegisterUpdate
+    Left = 640
+    Top = 344
+  end
+  object Timer2: TTimer
+    Enabled = False
+    Interval = 500
+    OnTimer = Timer2Timer
+    Left = 312
+    Top = 32
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 500
+    OnTimer = Timer1Timer
+    Left = 312
+  end
+  object Timer4: TTimer
+    Enabled = False
+    Interval = 500
+    OnTimer = Timer4Timer
+    Left = 312
+    Top = 96
+  end
+end
